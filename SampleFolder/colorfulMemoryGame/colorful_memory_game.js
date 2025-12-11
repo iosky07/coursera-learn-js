@@ -30,6 +30,7 @@ function shuffle(array) {
 
 function handleCardClick(event) {
     const card = event.target;
+    console.log("card: ", card);
     if (!card.classList.contains('card') || card.classList.contains('matched')) {
         return;
     }
@@ -43,6 +44,7 @@ function handleCardClick(event) {
 
 function checkMatch() {
     const [card1, card2] = selectedCards;
+    console.log("selectedCards: ", selectedCards);
     if (card1.dataset.color === card2.dataset.color) {
         card1.classList.add('matched');
         card2.classList.add('matched');
@@ -59,7 +61,6 @@ function checkMatch() {
 
 function startGame() {
     let timeLeft = 30;
-    debugger;
     startbtn.disabled = true;
     score = 0; // Reset score to zero
     scoreElement.textContent = `Score: ${score}`;
